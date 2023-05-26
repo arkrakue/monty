@@ -65,7 +65,7 @@ void set_stack(stack_t **stack, unsigned int line_number, int *data_format);
 int execute_opcode(char *opcode, char *arg,
 stack_t **stack, unsigned int line_number, int *data_format);
 void add_node_end(stack_t **stack, int n);
-/*Explicit declaration of certain used functions*/
+int _isdigit(char *str);
 
 
 
