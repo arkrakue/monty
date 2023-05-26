@@ -11,7 +11,7 @@
  */
 
 int execute_opcode(char *opcode, char *arg,
-stack_t **stack, unsigned int line_number)
+stack_t **stack, unsigned int line_number, int *data_format)
 {
 	if (strcmp(opcode, "push") == 0)
 		push(stack, line_number, arg);
