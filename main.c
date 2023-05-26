@@ -7,11 +7,12 @@
  * Return: EXIT_SUCCESS on success and EXIT_FAILURE on failure
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	FILE *file;
 	stack_t *stack = NULL;
-	int line_num = 0, data_format = 1;
+	unsigned int line_num = 0;
+	int data_format = 1;
 	char line[LINE_LENGTH];
 	char *opcode, *arg;
 
