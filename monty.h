@@ -58,7 +58,7 @@ void rotl(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void swap(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
-void nop(stack_t **stack __attribute__((unused)), unsigned int line_number __attribute__((unused)));
+void nop(stack_t **stack, unsigned int line_number);
 void add_node(stack_t **stack, int n);
 int execute_opcode(char *opcode, char *arg,
 stack_t **stack, unsigned int line_number);
