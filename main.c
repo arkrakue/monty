@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
 	FILE *file;
 	stack_t *stack = NULL;
-	int line_num = 0;
+	int line_num = 0, data_format = 1;
 	char line[LINE_LENGTH];
 	char *opcode, *arg;
 
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	
+
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 	{
@@ -32,10 +32,10 @@ int main(int argc, char *argv[])
 	{
 		line_num++;
 		opcode = strtok(line, " \t\n");
-		if(opcode == NULL || opcode[0] == '#')
+		if (opcode == NULL || opcode[0] == '#')
 			continue;
 		arg = strtok(NULL, " \t\n");
-		if(!execute_opcode(opcode, arg, &stack, line_num))
+		if (!execute_opcode(opcode, arg, &stack, line_num, &data_format))
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_num, opcode);
 			exit(EXIT_FAILURE);
