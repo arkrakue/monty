@@ -37,8 +37,18 @@ stack_t **stack, unsigned int line_number)
 		mod(stack, line_number);
 	else if (strcmp(opcode, "pchar") == 0)
 		pchar(stack, line_number);
-	/* add more instructions here */
+	else if (strcmp(opcode, "pstr") == 0)
+		pstr(stack, line_number);
+	else if (strcmp(opcode, "rotl") == 0)
+		rotl(stack, line_number);
+	else if (strcmp(opcode, "rotr") == 0)
+		rotr(stack, line_number);
+	else if (strcmp(opcode, "stack") == 0)
+		set_stack(stack, line_number, data_format);
+	else if (strcmp(opcode, "queue") == 0)
+		set_queue(stack, line_number, data_format);
+	/* add instructions */
 	else
-		return (0); /* opcode not found */
-	return (1); /* opcode successfully executed */
+		return (0);
+	return (1);
 }
