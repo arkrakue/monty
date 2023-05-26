@@ -1,36 +1,29 @@
-#read 
->, >, <<
-
-#convert from ascii
-+++++ +
 [
- >----- ---
- >----- ---
- <<-
+    This Brainfuck program reads two digits from stdin,
+    multiplies them, and prints the result followed by a new line.
 ]
 
-#multiply
->[
- >[>+>+<<-]
- >[<+>-]
- <<-
-]
-
-#separate numbers
->[-]>+> >+++++ +++++<
+> Read first digit from stdin
+,
+> Set up loop to subtract 48 from first digit
+>++++++[<-------->-]
+> Read second digit from stdin
+,
+< Set up loop to multiply first and second digits
 [
- - >- [>>>]+++++ +++++<<+
- [<<<]>>>>
+    >[>+>+<<-]>>[<<+>>-]
+    >>>++++++++++
+    <<[->+>-[>+>>]>[+[-<+>]>+>>]<<<<<<]
+    >[-]>>[<<+>>-]<[>+<-]<-
 ]
-<-
-<+++++ +++++>>>[-<<<->>>]<<<
-
-#convert to ascii
-<+++++ +
+> Print result
+>>.[-]
+<< Set up loop to add 10 to fourth cell
 [
- >+++++ +++>
- [+++++ +++>]
- <[<]>-
+    >>+>+<<<-
+    >>>[<<<+>>>-]
+    <<++++++++++
 ]
-#print
->>[.<<]<[<<]>>.>++++++++++.
+< Print newline character
+<[->-[>+>>]>[+[-<+>]>+>>]<<<<<]>[-]+>>[<<->>-]<<[<+>-]<.
+
