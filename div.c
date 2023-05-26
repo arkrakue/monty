@@ -11,7 +11,6 @@
 void division(stack_t **stack, unsigned int line_number)
 {
 	int quotient;
-	stack_t *temp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
@@ -24,8 +23,6 @@ void division(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	quotient = (*stack)->next->n / (*stack)->n;
-	temp = *stack;
-	*stack = (*stack)->next;
+	pop(stack, line_number);
 	(*stack)->n = quotient;
-	free(temp);
 }
