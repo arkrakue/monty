@@ -28,8 +28,6 @@ void add_node(stack_t **stack, int n)
 	}
 }
 
-#include "monty.h"
-
 /**
  * add_node_end - Add a new node at the end of the stack.
  * @stack: Double pointer to the stack.
@@ -60,4 +58,27 @@ void add_node_end(stack_t **stack, int n)
 		last = last->next;
 	last->next = new_node;
 	new_node->prev = last;
+}
+
+/**
+ * _isdigit - Checks if a string consists of digits.
+ * @str: The string to be checked.
+ * Return: 1 if the string consists of digits, 0 otherwise.
+ */
+int _isdigit(char *str)
+{
+	int i;
+
+	if (str == NULL)
+		return (0);
+
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i] == '-' && i == 0)
+			continue;
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+	}
+
+	return (1);
 }
