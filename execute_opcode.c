@@ -5,17 +5,9 @@
  * execute_opcode - Execute the opcode instruction.
  * @opcode: The opcode to be executed.
  * @arg: The argument associated with the opcode.
- * @stack: Pointer to the top of the stack.
- * @line_number: The current line number in the Monty file.
- *
+ * @stack: Pointer to the stack.
+ * @line_number: Line number.
  * Return: 1 if the opcode is successfully executed, 0 otherwise.
- *
- * Description: This function executes the
- * specified opcode instruction based on
- * the provided opcode string. It compares the opcode string with
- * known opcode instructions and calls the corresponding function
- * implementation if a match is found. The function returns 1 if the
- * opcode is successfully executed and 0 if the opcode is not found.
  */
 
 int execute_opcode(char *opcode, char *arg,
