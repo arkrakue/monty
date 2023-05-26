@@ -1,12 +1,11 @@
-#ifndef MONTYLIB_H
-#define MONTYLIB_H
+#ifndef MONTY_H
+#define MONTY_H
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <stddef.h>
 #include <string.h>
 #include <sys/types.h>
-#include <ctype.h>
 #define LINE_LENGTH 1024
 
 /**
